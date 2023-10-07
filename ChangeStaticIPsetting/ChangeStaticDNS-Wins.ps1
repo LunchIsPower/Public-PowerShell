@@ -1,6 +1,6 @@
 $computer = get-content .\computers.txt
 
-$NICs = Get-WMIObject Win32_NetworkAdapterConfiguration -computername $computer |where{$_.IPEnabled -eq “TRUE”}
+$NICs = Get-WMIObject Win32_NetworkAdapterConfiguration -computername $computer |Where-Object{$_.IPEnabled -eq “TRUE”}
 
 Foreach($NIC in $NICs)
    {
